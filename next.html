@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature and Biodiversity</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e1f5e1 url('https://png.pngtree.com/thumb_back/fw800/background/20221005/pngtree-forest-landscapevalderejo-natural-parkspain-wild-spain-biodiversity-photo-photo-image_34090390.jpg') repeat;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2ecc71;
+            color: white;
+            text-align: center;
+            padding: 2em;
+            border-bottom: 5px solid #27ae60;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        nav {
+            background-color: #27ae60;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 1.5em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        section:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #2ecc71;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1em;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        /* Responsive Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #2ecc71;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-links li {
+            margin-right: 15px;
+        }
+
+        /* Image Lightbox Styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .window-gallery-container {
+            max-width: 900px;
+            margin: 2em auto;
+        }
+
+        .window-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .window-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .window-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Logo Section */
+        .logo-section {
+            max-width: 200px;
+            margin: 2em auto;
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .logo-section:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 600px;
+            margin: 2em auto;
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-section:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 0.5em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 0.5em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Explore the Beauty of Nature</h1>
+        <p>Discover the Richness of Biodiversity</p>
+    </header>
+
+    <!-- Responsive Navigation -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Nature & Biodiversity</a>
+        <ul class="navbar-links">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#importance">Importance</a></li>
+            <li><a href="#species">Diverse Species</a></li>
+            <li><a href="#conservation">Conservation</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="index.html">Back to Earth Enchant</a></li>
+        </ul>
+    </nav>
+
+    <section id="intro">
+        <h2>Introduction to Biodiversity</h2>
+        <p>
+            Biodiversity, short for biological diversity, refers to the variety of life on Earth. It includes the diverse species of plants, animals, microorganisms, and ecosystems, as well as the genetic differences within these species.
+        </p>
+        <p>
+            Earth's biodiversity is crucial for maintaining ecological balance, providing ecosystem services, and contributing to the overall health of the planet.
+        </p>
+        <img src="https://source.unsplash.com/1000x400/?biodiversity" alt="Biodiversity Image" onclick="openLightbox(this)">
+    </section>
+
+    <section id="importance">
+        <h2>Importance of Biodiversity</h2>
+        <p>
+            Biodiversity plays a vital role in sustaining life on Earth. It contributes to ecosystem resilience, ensuring that ecosystems can withstand and recover from various disturbances.
+        </p>
+        <p>
+            Additionally, biodiversity is essential for agriculture, medicine, and cultural values. It provides food, raw materials, and inspiration for countless cultures around the world.
+        </p>
+        <img src="https://source.unsplash.com/1000x400/?nature" alt="Nature Image" onclick="openLightbox(this)">
+    </section>
+
+    <section id="species">
+        <h2>Diverse Species</h2>
+        <p>
+            Earth is home to an incredible array of species, each adapted to its unique environment. From the depths of the oceans to the highest mountain peaks, diverse life forms thrive in various ecosystems.
+        </p>
+        <p>
+            Exploring the different species and their habitats provides insights into the interconnected web of life.
+        </p>
+        <img src="https://source.unsplash.com/1000x400/?wildlife" alt="Wildlife Image" onclick="openLightbox(this)">
+    </section>
+
+    <section id="conservation">
+        <h2>Conservation Efforts</h2>
+        <p>
+            Protecting biodiversity is a shared responsibility. Conservation efforts focus on preserving habitats, preventing species extinction, and promoting sustainable practices.
+        </p>
+        <p>
+            Engaging in conservation activities helps ensure a harmonious coexistence between humans and the natural world.
+        </p>
+        <img src="https://source.unsplash.com/1000x400/?conservation" alt="Conservation Image" onclick="openLightbox(this)">
+    </section>
+
+    <section id="gallery">
+        <h2>Nature Gallery</h2>
+        <p>
+            Explore the beauty of nature through captivating images. Each photo showcases the incredible diversity of life on our planet.
+        </p>
+
+        <!-- Window Gallery -->
+        <div class="window-gallery-container">
+            
+            <div class="window-gallery">
+                <img src="https://source.unsplash.com/500x500/?nature" alt="Nature Image 1" onclick="openLightbox(this)">
+                <img src="https://source.unsplash.com/500x500/?wildlife" alt="Nature Image 2" onclick="openLightbox(this)">
+                <img src="https://source.unsplash.com/500x500/?biodiversity" alt="Nature Image 3" onclick="openLightbox(this)">
+                <img src="https://source.unsplash.com/500x500/?ecosystem" alt="Nature Image 4" onclick="openLightbox(this)">
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>Contact Information</h2>
+            <p>Email: www.earthenchant@gmail.com.com</p>
+            <p>Phone: +91 6307123186</p>
+            <p>Address: Lovely Professional University, Phagwara, Punjab</p>
+
+            <!-- Contact Form -->
+            <form class="contact-form" action="mailto:example@example.com" method="post" enctype="text/plain">
+                <label for="query">Query:</label>
+                <textarea id="query" name="query" rows="4" placeholder="Type your query here..."></textarea>
+                <button type="submit">Submit Query</button>
+            </form>
+        </section>
+
+        <!-- Logo Section -->
+        <section class="logo-section">
+           
+            <div class="logo">
+                <!-- Replace the placeholder link with your logo image link -->
+                <img src="https://static.mygov.in/media/self4society/2019/05/mygov-10000000001486857947.jpg" alt="Logo">
+            </div>
+        </section>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Lightbox Image" id="lightbox-image">
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Nature and Biodiversity</p>
+    </footer>
+
+    <script>
+        function openLightbox(element) {
+            document.getElementById('lightbox-image').src = element.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
